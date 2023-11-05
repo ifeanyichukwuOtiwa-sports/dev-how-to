@@ -50,8 +50,8 @@ public class Processor {
     private final List<ValidationHandler> handlers;
 
     @Autowired
-    public Processor(List<ValidationHandler> handlers) {
-        this.handlers = handlers;
+    public Processor(ValidationHandler... handlers) {
+        this.handlers = List.of(handlers);
     }
 
     public Data create(final Request request, List<BigDecimal> prices, int jur, boolean auto, String uuid) {
